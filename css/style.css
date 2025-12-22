@@ -1,0 +1,82 @@
+body,
+html {
+    background-color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.card {
+    border-radius: 5px;
+    background-color: #191970;
+    color: rgba(255, 223, 0, 0.60);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+}
+
+.upper-left {
+    border-top-left-radius: 50px;
+}
+
+.upper-right {
+    border-top-right-radius: 50px;
+}
+
+.container {
+    margin: 10px;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+img {
+    -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+    mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+    -webkit-mask-size: 800%;
+    mask-size: 800%;
+    -webkit-mask-position: 0;
+    mask-position: 0;
+}
+
+img:hover, .img:active {
+    transition: mask-position 2s ease,-webkit-mask-position 2s ease;
+    -webkit-mask-position: 120%;
+    mask-position: 120%;
+    opacity: 1;
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.sky {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    
+    pointer-events: none;
+}
+
+
+
+.gold {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight:bold;
+    -webkit-margin-before: 0.3em; 
+    -webkit-margin-after: 0.2em;
+    background-image: -webkit-linear-gradient(#FFF65C, #3A2C00);
+    text-shadow: -0.02em -0.03em 0.005em rgba(255, 223, 0, 0.60);
+  }

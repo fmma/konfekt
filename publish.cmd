@@ -1,0 +1,1 @@
+scp -r ./* foadell:www_root/domains/snesl.dk/konfekt
