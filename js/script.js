@@ -96,4 +96,37 @@ let snow = function () {
     masthead.appendChild(canvas);
   };
 
-  window.onload = snow;
+  // Shuffle chocolate cards on page load
+  let shuffleCards = function() {
+    var container = document.querySelector('.container');
+    var cards = Array.from(container.children);
+
+    // Find the title card (upper-left)
+    var titleCard = cards.find(card => card.classList.contains('upper-left'));
+
+    // Get all chocolate cards (excluding title)
+    var chocolateCards = cards.filter(card => !card.classList.contains('upper-left'));
+
+    // Remove upper-right class from all cards to prevent grid layout issues
+    chocolateCards.forEach(card => card.classList.remove('upper-right'));
+
+    // Fisher-Yates shuffle
+    for (let i = chocolateCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [chocolateCards[i], chocolateCards[j]] = [chocolateCards[j], chocolateCards[i]];
+    }
+
+    // Clear container
+    container.innerHTML = '';
+
+    // Add title card first
+    container.appendChild(titleCard);
+
+    // Add shuffled chocolate cards
+    chocolateCards.forEach(card => container.appendChild(card));
+  };
+
+  window.onload = function() {
+    snow();
+    shuffleCards();
+  };

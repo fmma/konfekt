@@ -4,7 +4,7 @@
 # This script copies all necessary files to the remote server
 
 REMOTE_HOST="foadell"
-REMOTE_PATH="/home/fmadsen/www_root/domains/konfekt"
+REMOTE_PATH="/home/fmadsen/www_root/domains/snesl.dk/konfekt"
 
 echo "Publishing to ${REMOTE_HOST}:${REMOTE_PATH}..."
 
